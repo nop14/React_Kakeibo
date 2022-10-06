@@ -23,3 +23,51 @@ SPAなのでとりあえずはcreate-react-appで作る
 - +ボタンでモーダルを表示して表にデータを挿入
 - -ボタンで削除
 - ダウンロードボタンで表示されている表をCSVでダウンロード
+  
+## MVCについて
+- Model
+  - PostgresqlをNode.jsから叩く
+- View
+  - Create-React-appで作る
+- Controller
+  - Node.js
+
+## 開発環境
+とりあえずDockerでNode.js用コンテナとPostgresql用コンテナを立てて行う
+
+# Model設計
+# View設計
+## HTMLレイアウト
+全体のレイアウトは基本的にHTMLでひな型を作っておく
+
+今回は**2カラムレイアウト**に左カラムは上下に分ける構成
+
+カラム内にReactをレンダリングする#graph1/#graph2/#tableタグを用意してあるので、これらに適したコンポーネントをReactで作って埋めていく感じ
+
+## Reactコンポーネント
+コンポーネントは3つ配置するが、**種類としてはGraphとTableの二つ**
+各コンポーネントは**header/contents/footer**を持つ
+### Graph
+- 引数
+  - graph_id: 表示するグラフを選択するID
+  - data: 表示するデータ配列
+- header
+  - 空
+- contents 
+  - [Recharts](https://recharts.org/en-US/)を使って書こうと思っている
+- footer
+  - 空
+### Table
+- 引数
+  - 無し
+- header
+  - 表示する財源/収支の種類/期間を書き込むフィールド
+    - selectはreact-selectを使って実装
+- contents
+  - headerに応じてDBからデータをとってきて表を表示する
+  - 最後の行はその期間の収支を書き込む
+  - 表データをダウンロードできるボタンをつける
+- footer
+  - その期間始まった時の元金/現在金額/差額を表示する
+
+## Controller設計

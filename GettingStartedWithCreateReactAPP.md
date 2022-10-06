@@ -1,1 +1,0 @@
-[ここ](https://create-react-app.dev/docs/getting-started)のお話

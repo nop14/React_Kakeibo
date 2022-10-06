@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/my_kakeibo/node_modules
+/my_kakeibo/.pnp
+/my_kakeibo/.pnp.js
+
+# testing
+/my_kakeibo/coverage
+
+# production
+/my_kakeibo/build
+
+# misc
+/my_kakeibo/.DS_Store
+/my_kakeibo/.env.local
+/my_kakeibo/.env.development.local
+/my_kakeibo/.env.test.local
+/my_kakeibo/.env.production.local
+
+/my_kakeibo/npm-debug.log*
+/my_kakeibo/yarn-debug.log*
+/my_kakeibo/yarn-error.log*
