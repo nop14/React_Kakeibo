@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Table from './Table/Table'
+import Graph from './Graph/Graph'
 import reportWebVitals from './reportWebVitals';
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,6 +18,16 @@ const table = ReactDOM.createRoot(document.getElementById("table"));
 table.render(
   <React.StrictMode>
     <Table />
+  </React.StrictMode>
+)
+graph1.render(
+  <React.StrictMode>
+    <Graph id="1" />
+  </React.StrictMode>
+)
+graph2.render(
+  <React.StrictMode>
+    <Graph id="2" />
   </React.StrictMode>
 )
 
