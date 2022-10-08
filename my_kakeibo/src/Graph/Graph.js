@@ -17,7 +17,7 @@ class Graph extends PureComponent {
         ]
     }
     render() {
-        if(this.graph_id == 1){
+        if(this.graph_id === 1){
             return(
                 <ResponsiveContainer width="100%" height="100%">
                     <LineChart width={600} height={300} data={this.data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
@@ -29,7 +29,7 @@ class Graph extends PureComponent {
                     </LineChart>
                 </ResponsiveContainer>
             )
-        }else if(this.graph_id == 2){
+        }else if(this.graph_id === 2){
             return(
                 <ResponsiveContainer width="100%" height="100%">
                     <PieChart width={400} height={400}>
