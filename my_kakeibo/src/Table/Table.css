@@ -27,6 +27,7 @@ select {
 table {
     width: 100%;
     border-spacing: 0;
+    border: 1px solid black;
 }
 
 
@@ -39,6 +40,14 @@ tr {
 
 td {
     border: 1px solid black;
+}
+
+.in_column {
+    background-color: rgba(0, 128, 0, 0.3);
+}
+
+.out_column {
+    background-color: rgba(255, 0, 0, 0.3);
 }
 
 th {

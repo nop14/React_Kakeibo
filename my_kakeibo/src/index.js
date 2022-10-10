@@ -1,16 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import App from './App';
 import './index.css';
 import Table from './Table/Table'
 import Graph from './Graph/Graph'
 import reportWebVitals from './reportWebVitals';
 
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// );
+// DB操作(controller)に関する部分
+
+// レンダリング(view)に関する部分
 const graph1 = ReactDOM.createRoot(document.getElementById("graph1"));
 const graph2 = ReactDOM.createRoot(document.getElementById("graph2"));
 const table = ReactDOM.createRoot(document.getElementById("table"));

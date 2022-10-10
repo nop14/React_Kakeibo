@@ -4,6 +4,7 @@
 /my_kakeibo/node_modules
 /my_kakeibo/.pnp
 /my_kakeibo/.pnp.js
+/backend/node_modules
 
 # testing
 /my_kakeibo/coverage
