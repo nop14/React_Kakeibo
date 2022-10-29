@@ -6,6 +6,20 @@ SPAなのでとりあえずはcreate-react-appで作る
 > Next.jsに以降するかも
 できればVue.js+Nuxt.js版も作って教材みたいな感じにできたらいいなあ
 
+## 開発環境
+とりあえずDockerでNode.js用コンテナとReact用コンテナとPostgresql用コンテナを立てて行う
+
+(Reactコンテナのpackage.jsonのproxy設定がdockerじゃない場所で動かしたときにも動くようになんか場合わけできないかな)
+### 使い方
+```
+docker-compose build
+docker-compose up -d
+```
+
+これでlocalhost:3002でサーバーが開かれるはず
+# Postgresqlのコンテナ
+[ここ](https://qiita.com/honda28/items/fcfb7ce2786d72d98e46)を参考にして作る
+
 # 設計
 外観はこんな感じ
 
@@ -32,20 +46,13 @@ SPAなのでとりあえずはcreate-react-appで作る
 - Controller
   - Node.js
 
-## 開発環境
-とりあえずDockerでNode.js用コンテナとReact用コンテナとPostgresql用コンテナを立てて行う
-
-(Reactコンテナのpackage.jsonのproxy設定がdockerじゃない場所で動かしたときにも動くようになんか場合わけできないかな)
-### 使い方
-docker-compose build
-docker-compose up -d
-
-これでlocalhost:3000でサーバーが開かれるはず
-# Postgresqlのコンテナ
-[ここ](https://qiita.com/honda28/items/fcfb7ce2786d72d98e46)を参考にして作る
-
 
 # Model設計
+ER図はこれ
+Postgresql/init以下に0〇_〇〇.sqlの名前のファイルを作っておくと
+Dockerが勝手にここのファイルで初期化してくれる。
+(正確に言うとpostgresのコンテナの/docker-entrypoint-initdb.d以下のファイルを初期化時に実行する)
+**sqlで文字列は"(ダブルクオーテーション)ではなく'(シングルクオーテーション)で囲まないとダメ**
 # View設計
 ## HTMLレイアウト
 ~~全体のレイアウトは基本的にHTMLでひな型を作っておく~~
@@ -99,6 +106,8 @@ backend以下にexpressのジェネレーターでmy_kakeibo_backendを構築し
 my_kakeibo側の接続設定はpackage.jsonのproxy設定で、my_kakeibo_backend側の設定はpackage.jsonのscripts設定で
 
 参考にしたページではstartコマンド時にPORTオプションを指定していたが、.envファイルを作って設定しないと動かなかった
+
+dbとの接続はnode-postgresモジュールで行う
 
 ## 本番環境
 https://qiita.com/naohikowatanabe/items/71a8bf477216ef56a5b7
