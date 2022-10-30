@@ -50,9 +50,13 @@ docker-compose up -d
 
 # Model設計
 ER図はこれ
+
 Postgresql/init以下に0〇_〇〇.sqlの名前のファイルを作っておくと
+
 Dockerが勝手にここのファイルで初期化してくれる。
+
 (正確に言うとpostgresのコンテナの/docker-entrypoint-initdb.d以下のファイルを初期化時に実行する)
+
 **sqlで文字列は"(ダブルクオーテーション)ではなく'(シングルクオーテーション)で囲まないとダメ**
 # View設計
 ## HTMLレイアウト
