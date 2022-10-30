@@ -1,10 +1,10 @@
 import React, { useState,useEffect } from "react";
 import Graph from "./Graph/Graph"
-import Table from "./Table/Table"
+import CustomTable from "./CustomTable/CustomTable"
 import "./Frame.css"
 
 function Frame() {
-    const url = "/users";
+    const url = "/incomeandexpenditure";
     const [cols, setCols] = useState();
     const [money_source, setMoneySource] = useState();
     const [in_out, setInOut] = useState();
@@ -12,15 +12,15 @@ function Frame() {
     const [end_date, setEndDate] = useState();
     // ここでURLを変数に応じて生成してGET処理をbackendに送る
     useEffect(() => {
-    fetch(url, { method: "GET" })
+        fetch(url, { method: "GET" })
         .then((res) => res.json())
         .then((data) => {
             console.log(data);
         setCols(data);
         })
         .catch((err) => {
-        console.log(err);
-        console.log("err");
+            console.log(err);
+            console.log("err");
         });
     }, []);
 
@@ -49,7 +49,7 @@ function Frame() {
                 <div id="right_column">
                     <div id="table">
                         <React.StrictMode>
-                            <Table
+                            <CustomTable
                                 setMoneySource={setMoneySource}
                                 setInOut={setInOut}
                                 setStartDate={setStartDate}

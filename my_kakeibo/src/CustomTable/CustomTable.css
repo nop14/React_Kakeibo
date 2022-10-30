@@ -21,15 +21,17 @@ select {
 /* tableをスクロールさせるためoverflow-yを置く */
 .Table-contents {
     height: calc(100% - 6em);
-    overflow-y: scroll;
+    width: 100%;
+    padding: 0 2.5%;
 }
 
+/*
+2022/10/30 Material UIを使うため除去
 table {
     width: 100%;
     border-spacing: 0;
     border: 1px solid black;
 }
-
 
 tr {
     text-align: center;
@@ -42,23 +44,17 @@ td {
     border: 1px solid black;
 }
 
-.in_column {
-    background-color: rgba(0, 128, 0, 0.3);
-}
-
-.out_column {
-    background-color: rgba(255, 0, 0, 0.3);
-}
-
 th {
     border: 1px solid black;
 }
+*/
 
 /* テーブルをスクロールさせるのはここを参考にした */
 /* https://since-inc.jp/blog/8675 */
 /* https://so-zou.jp/web-app/tech/css/sample/fixed-header.htm */
+/*
 .Table-fixedheader {
-    position: sticky; /* positionとtop/bottomは分けて書くと機能しない? */
+    position: sticky; // positionとtop/bottomは分けて書くと機能しない?
     top: 0;
 }
 
@@ -70,6 +66,15 @@ th {
 table {
     height: 100%;
 }
+*/
+.in_column {
+    background-color: rgba(0, 128, 0, 0.3);
+}
+
+.out_column {
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
 
 .Table-footer {
     height: 3em;

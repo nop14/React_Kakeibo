@@ -41,6 +41,7 @@ docker-compose up -d
 ## MVCについて
 - Model
   - PostgresqlをNode.jsから叩く
+  - TODO: OpenAPIにする
 - View
   - Create-React-appで作る
 - Controller
@@ -82,6 +83,7 @@ src以下にFrame.jsというファイルを作りコンポーネントとして
   - 表示する財源/収支の種類/期間を書き込むフィールド
     - selectはreact-selectを使って実装
 - contents
+  - [Material UI](https://mui.com/material-ui/react-table/)のTableを使う
   - headerに応じてDBからデータをとってきて表を表示する
   - 最後の行はその期間の収支を書き込む
   - 表データをダウンロードできるボタンをつける
